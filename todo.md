@@ -1,0 +1,95 @@
+# Project TODO
+
+- [x] Definir a estrutura de dados de categorias, produtos, tamanhos, estoque, pedidos e itens do pedido.
+- [x] Criar identidade visual própria da Overzied Modas com o monograma textual OM e paleta escura com acento verde-neon.
+- [x] Incorporar a logo original enviada pelo usuário no cabeçalho, rodapé, favicon e painel administrativo.
+- [x] Criar recursos visuais originais para hero e catálogo, sem reutilizar imagens ou identidade do site de referência.
+- [x] Construir a página inicial responsiva com barra promocional animada, hero, CTAs, benefícios e seções de categorias.
+- [x] Construir catálogo filtrável para Camisetas, Bermudas, Kits, Calças, Calçados, Esportivo, Perfumes e Acessórios.
+- [x] Implementar busca de produtos em tempo real no cabeçalho.
+- [x] Exibir sugestões de produtos no cabeçalho enquanto o cliente digita a busca.
+- [x] Construir página de categoria com breadcrumb e listagem filtrada de produtos.
+- [x] Construir página de detalhes com galeria, tamanho, precificação promocional, carrinho, WhatsApp e produtos relacionados.
+- [x] Implementar carrinho lateral com edição de quantidade, remoção, subtotal e encaminhamento ao checkout.
+- [x] Decidir manter o checkout no próprio site, sem substituir a finalização por encaminhamento de pedido ao WhatsApp.
+- [x] Manter o WhatsApp como canal de suporte; a configuração do número oficial foi registrada para a próxima atualização da loja.
+- [x] Preparar o checkout no próprio site para Pix, cartão e boleto, sem redirecionar a finalização ao WhatsApp.
+- [x] Registrar como dependência futura a exibição de QR Code Pix e código copia-e-cola, que será criada pelo gateway escolhido.
+- [x] Preparar a estrutura de status pendente, aprovado, recusado e cancelado para a futura integração de pagamento.
+- [x] Documentar a necessidade de notificações autenticadas do gateway para atualizar automaticamente cada pagamento.
+- [x] Documentar que credenciais do gateway devem ficar somente em variáveis de ambiente seguras, fora do código-fonte e do navegador.
+- [x] Documentar a validação obrigatória de assinatura de webhooks, total do pedido e idempotência antes de atualizar pagamentos.
+- [x] Não armazenar dados de cartão, credenciais bancárias ou chave Pix em dados públicos da loja nesta versão.
+- [x] Exibir somente informações estritamente necessárias de pedidos no painel, protegidas por role admin.
+- [x] Construir checkout com dados do cliente e opções Pix, cartão e boleto, preparado para futura integração com gateway.
+- [x] Registrar que a integração inicial com Mercado Pago foi substituída pela decisão pendente do gateway de pagamento.
+- [x] Registrar que o responsável decidiu escolher o gateway de pagamento em momento posterior.
+- [x] Documentar a retomada da integração quando o responsável escolher a plataforma e disponibilizar as credenciais seguras.
+- [x] Criar banco de dados e procedimentos para produtos, pedidos e operações administrativas.
+- [x] Persistir pedidos pendentes com os itens e dados validados do checkout antes de ativar o gateway de pagamento.
+- [x] Recalcular no servidor os preços e o total a partir do catálogo antes de persistir pedidos, sem confiar em valores enviados pelo navegador.
+- [x] Confirmar no servidor que cada tamanho solicitado está disponível no produto antes de registrar o pedido.
+- [x] Somar quantidades repetidas de cada produto antes de validar o estoque do pedido.
+- [x] Testar a agregação de quantidades repetidas usada na validação de estoque.
+- [x] Testar que o contrato público do checkout descarta preços, nomes e totais enviados pelo navegador.
+- [x] Documentar os controles atuais de segurança e a lista de requisitos para ativar o gateway de pagamento futuramente.
+- [x] Criar painel administrativo com cadastro, edição e remoção de produtos.
+- [x] Proteger o painel administrativo por role admin no backend e na interface.
+- [x] Exibir no painel administrativo uma lista mínima e protegida de pedidos, sem dados de pagamento sensíveis.
+- [x] Criar testes automatizados das permissões administrativas e autenticação.
+- [x] Validar a experiência visual em desktop e mobile e revisar a responsividade do catálogo e produto.
+- [x] Salvar uma versão de entrega após revisar todo.md.
+
+## Próxima atualização dependente do responsável
+
+- Escolher o gateway de pagamento e fornecer as credenciais pela configuração segura do projeto.
+- Informar o número oficial de atendimento no WhatsApp, caso deseje atendimento direto por esse canal.
+
+## Migração para Supabase
+
+- [x] Corrigir a marca exibida na interface para mostrar “Overzied Modas” em vez de apenas “Overzied”.
+- [x] Auditar todas as ocorrências visíveis do nome da marca e corrigir qualquer uso isolado de “Overzied”, mantendo apenas “OM” como símbolo compacto.
+- [x] Validar as principais telas após a padronização do nome completo da marca.
+- [x] Avaliar a compatibilidade do projeto atual com frontend estático, Supabase e GitHub Pages.
+- [ ] Definir com o responsável a alternativa de verificação periódica adequada para o projeto Supabase.
+- [ ] Configurar agendamento interno semanal no Supabase para acionar uma função de verificação segura.
+- [x] Preparar esquema SQL, políticas de segurança e credenciais públicas/privadas para Supabase.
+- [x] Validar por teste automatizado que a migração do Supabase habilita RLS, restringe o painel administrativo e não inclui chave privada.
+- [x] Migrar catálogo, pedidos e autenticação para as APIs seguras do Supabase.
+- [ ] Configurar uma verificação periódica autorizada sem expor chaves e sem depender de acesso manual.
+- [x] Documentar publicação do frontend estático e configuração do Supabase.
+- [x] Criar workflow do GitHub Pages para gerar e publicar o frontend estático com as variáveis públicas do Supabase.
+- [x] Corrigir a colisão de nomes no roteamento do desenvolvimento e validar a renderização da vitrine.
+- [x] Validar tipos, testes automatizados e build estático com base de subdiretório do GitHub Pages.
+- [x] Criar workflow semanal somente de leitura do catálogo público, sem chave privada e com execução manual disponível.
+- [x] Validar a vitrine no formato de celular e orientar a demonstração pelo GitHub Pages.
+- [x] Validar em tela de celular as páginas de categoria, produto e checkout, além da página inicial.
+- [x] Documentar um roteiro curto para publicar a demonstração no GitHub Pages, abrir no celular e entender suas limitações antes do Supabase real.
+- [x] Ajustar o comando de desenvolvimento para funcionar no PowerShell do Windows sem sintaxe específica do Linux.
+- [x] Incluir a logo e a imagem de destaque no projeto para que funcionem no computador do usuário e no GitHub Pages.
+- [x] Substituir a imagem principal reduzida por uma versão mais nítida, mantendo o funcionamento offline e no GitHub Pages.
+- [x] Adicionar a imagem principal em alta resolução ao caminho público do projeto, além do pacote ZIP.
+- [x] Confirmar no build e na prévia que a imagem nítida é carregada sem usar o fallback reduzido.
+- [x] Adicionar uma validação automatizada de que a home prioriza a imagem pública em alta resolução.
+- [x] Verificar que o fallback incorporado não é usado quando o ativo público existe.
+- [x] Validar e, se necessário, corrigir a logo incorporada para garantir que renderize localmente e no GitHub Pages.
+- [x] Comprovar a integridade da logo no bundle estático antes de gerar o pacote corrigido.
+- [x] Criar uma documentação inicial profissional com instruções de instalação, execução, publicação e configuração futura.
+- [x] Revisar o conteúdo do ZIP para manter somente arquivos relevantes ao repositório e à publicação no GitHub.
+- [ ] Diagnosticar e corrigir a configuração do GitHub Pages quando o endereço público exibe o README em vez da vitrine.
+- [ ] Fornecer e enviar ao repositório a pasta `.github/workflows` ausente para habilitar a publicação estática da vitrine pelo GitHub Actions.
+- [x] Ajustar o gatilho do workflow de publicação para a branch padrão `root` identificada no repositório GitHub do usuário.
+- [ ] Atualizar o arquivo final do workflow no repositório GitHub do usuário e confirmar sua execução pela branch `root`.
+- [ ] Gerar e conferir um novo pacote ZIP completo para criação de repositório GitHub limpo, incluindo o workflow de publicação corrigido.
+- [x] Corrigir a etapa de instalação do pnpm no workflow após a falha identificada no GitHub Actions.
+- [x] Resolver o conflito entre a versão do pnpm declarada no workflow e a versão indicada no package.json.
+- [x] Investigar e remover a causa da falha genérica de instalação do pnpm exibida pelo GitHub Actions após a eliminação do conflito de versão.
+- [x] Revisar a documentação de publicação para orientar o uso da branch padrão do repositório, seja `main` ou `root`.
+- [ ] Validar a vitrine React no GitHub Pages após a execução bem-sucedida do workflow.
+- [x] Substituir o símbolo atual de atendimento pelo ícone reconhecível do WhatsApp nos elementos públicos da loja.
+- [x] Definir que a conta Google autorizada do dono identificará o administrador da loja.
+- [ ] Confirmar com o responsável se a loja usará Supabase e painel administrativo ou pedidos fechados exclusivamente pelo WhatsApp.
+- [x] Ajustar o retorno do login Google para preservar o subdiretório do GitHub Pages.
+- [ ] Validar com o responsável se o login Google será obrigatório antes do checkout ou opcional para clientes.
+- [ ] Configurar login Google pelo Supabase Auth após a criação e autorização das credenciais OAuth da loja.
+- [ ] Criar perfil de cliente com dados mínimos de entrega e edição segura de endereços após decisão do responsável.
